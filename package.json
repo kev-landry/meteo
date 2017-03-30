@@ -1,0 +1,22 @@
+{
+  "name": "meteo",
+  "version": "1.0.0",
+  "description": "data meteo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kev-landry/meteo.git"
+  },
+  "author": "kev/clem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kev-landry/meteo/issues"
+  },
+  "homepage": "https://github.com/kev-landry/meteo#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
