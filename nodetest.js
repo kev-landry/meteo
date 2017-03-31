@@ -1,9 +1,18 @@
-const http = require('http');
-const port = 8080;
-const server = http.createServer((req, res) => {
-   res.writeHead(200, {'Content-Type': 'text/plain'});
-   res.end('Hello World\n');
+
+var http = require('http');
+var url = require('url');
+var querystring = require('querystring');
+
+var server = http.createServer(function(req, res) {
+    var params = querystring.parse(url.parse(req.url).query);
+    res.writeHead(200, {"Content-Type": "text/plain"});
+    console.log('value');
+    if ('value' in params) {
+        res.write('Vous vous appelez ' + params['value'] + ' ' + params['value2']);
+    }
+    else {
+        res.write('Pas de réponse dans les params');
+    }
+    res.end();
 });
-server.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
-});
+server.listen(8080);
