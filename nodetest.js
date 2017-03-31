@@ -1,4 +1,3 @@
-
 var http = require('http');
 var url = require('url');
 var querystring = require('querystring');
@@ -6,12 +5,11 @@ var querystring = require('querystring');
 var server = http.createServer(function(req, res) {
     var params = querystring.parse(url.parse(req.url).query);
     res.writeHead(200, {"Content-Type": "text/plain"});
-    console.log('value');
-    if ('value' in params) {
-        res.write('Vous vous appelez ' + params['value'] + ' ' + params['value2']);
+    if ('prenom' in params && 'nom' in params) {
+        res.write('Vous vous appelez ' + params['temp'] + ' ' + params['humi']);
     }
     else {
-        res.write('Pas de réponse dans les params');
+        res.write('Vous devez bien avoir un prénom et un nom, non ?');
     }
     res.end();
 });
